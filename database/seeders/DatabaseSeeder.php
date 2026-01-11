@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\Article;
 use App\Models\User;
 use App\Models\Greeting;
+use Database\Factories\ArticleFactory;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -25,5 +27,7 @@ class DatabaseSeeder extends Seeder
         Greeting::create(['name' => 'Hi']);
         Greeting::create(['name' => 'Hey']);
         Greeting::create(['name' => 'Howdy']);
+
+        Article::factory(100)->create();
     }
 }

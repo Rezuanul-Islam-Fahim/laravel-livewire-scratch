@@ -22,6 +22,7 @@
 
 <body class="p-6 bg-gray-900">
     <livewire:greeter />
+    <livewire:article-search />
 </body>
 
 </html>
