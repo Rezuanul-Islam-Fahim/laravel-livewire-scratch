@@ -4,10 +4,11 @@
             <select
                 class="block p-3 rounded-md bg-gray-700 border border-gray-600"
                 wire:model.fill="greeting">
-                <option value="Hello">Hello</option>
-                <option value="Hi">Hi</option>
-                <option value="Hey" selected>Hey</option>
-                <option value="Howdy">Howdy</option>
+                @foreach ($greetings as $e)
+                    <option value="{{ $e->name }}">
+                        {{ $e->name }}
+                    </option>
+                @endforeach
             </select>
             <input
                 class="block p-3 rounded-md bg-gray-700 border border-gray-600"

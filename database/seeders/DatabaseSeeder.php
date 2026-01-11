@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\Greeting;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -19,5 +20,10 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
+
+        Greeting::create(['name' => 'Hello']);
+        Greeting::create(['name' => 'Hi']);
+        Greeting::create(['name' => 'Hey']);
+        Greeting::create(['name' => 'Howdy']);
     }
 }
