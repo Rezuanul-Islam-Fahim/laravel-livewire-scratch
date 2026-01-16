@@ -14,7 +14,9 @@
     </form>
     <div class="mt-3">
         @foreach ($results as $e)
-            <p class="text-white">{{ $e->title }}</p>
+            <a href="/articles/{{ $e->id }}">
+                <p class="text-white">{{ $e->title }}</p>
+            </a>
         @endforeach
     </div>
 </div>

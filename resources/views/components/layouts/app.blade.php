@@ -20,7 +20,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="p-6 bg-gray-900">
+<body class="p-6 bg-gray-900 text-white">
     {{ $slot }}
 </body>
 
