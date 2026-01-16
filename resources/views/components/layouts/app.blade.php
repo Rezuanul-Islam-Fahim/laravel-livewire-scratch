@@ -21,6 +21,7 @@
 </head>
 
 <body class="p-6 bg-gray-900 text-white">
+    <livewire:article-search />
     {{ $slot }}
 </body>
 

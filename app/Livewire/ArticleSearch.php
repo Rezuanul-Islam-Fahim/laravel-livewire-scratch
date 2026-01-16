@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Article;
+use Livewire\Attributes\Reactive;
 use Livewire\Component;
 
 class ArticleSearch extends Component

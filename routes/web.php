@@ -8,6 +8,4 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::get('/search', ArticleSearch::class);
-
 Route::get('/articles/{article}', ArticlePage::class);

@@ -12,11 +12,5 @@
             Clear
         </button>
     </form>
-    <div class="mt-3">
-        @foreach ($results as $e)
-            <a href="/articles/{{ $e->id }}">
-                <p class="text-white">{{ $e->title }}</p>
-            </a>
-        @endforeach
-    </div>
+    <livewire:search-result :show="!empty($searchText)" :results="$results" />
 </div>
