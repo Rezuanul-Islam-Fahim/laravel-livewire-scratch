@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\ArticleEdit;
 use App\Livewire\ArticleIndex;
 use App\Livewire\ArticleList;
 use App\Livewire\ArticlePage;
@@ -12,3 +13,4 @@ Route::get('/articles/{article}', ArticlePage::class);
 Route::get('/dashboard', Dashboard::class);
 Route::get('/dashboard/articles', ArticleList::class);
 Route::get('/dashboard/articles/create', CreateArticle::class);
+Route::get('/dashboard/articles/{article}/edit', ArticleEdit::class);

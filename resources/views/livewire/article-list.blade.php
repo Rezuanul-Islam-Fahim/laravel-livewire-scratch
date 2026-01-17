@@ -14,7 +14,12 @@
                 <tr>
                     <td class="p-4" wire:key={{ $article->id }}>
                         {{ $article->title }}</td>
-                    <td class="p-4">
+                    <td class="p-4 space-x-2">
+                        <a href="/dashboard/articles/{{ $article->id }}/edit"
+                            wire:navigate:hover
+                            class="py-2 px-3 rounded-md cursor-pointer">
+                            Edit
+                        </a>
                         <button
                             class="bg-red-600 hover:bg-red-800 py-2 px-3 rounded-md cursor-pointer"
                             wire:click="delete({{ $article->id }})"
