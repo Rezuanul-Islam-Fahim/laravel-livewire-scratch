@@ -10,7 +10,8 @@
     @endif
 
     @foreach ($results as $e)
-        <a wire:navigate.hover href="/articles/{{ $e->id }}">
+        <a wire:navigate.hover href="/articles/{{ $e->id }}"
+            wire:key={{ $e->id }}>
             <p class="text-white">{{ $e->title }}</p>
         </a>
     @endforeach
