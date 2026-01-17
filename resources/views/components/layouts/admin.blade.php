@@ -26,19 +26,15 @@
             <div class="flex justify-between items-center">
                 <!-- Left side - Nav items -->
                 <div class="flex items-center space-x-8">
-                    <a href="/"
-                        class="text-white hover:text-gray-300 transition-colors font-medium">
-                        Home
-                    </a>
+
                     <a href="/dashboard"
                         class="text-white hover:text-gray-300 transition-colors font-medium">
                         Admin Dashboard
                     </a>
-                </div>
-
-                <!-- Right side - Search bar -->
-                <div class="flex-1 max-w-xs ml-auto">
-                    <livewire:article-search />
+                    <a href="/dashboard/articles"
+                        class="text-white hover:text-gray-300 transition-colors font-medium">
+                        Articles
+                    </a>
                 </div>
             </div>
         </div>
@@ -47,9 +43,6 @@
     <div class="p-6">
         {{ $slot }}
     </div>
-    <script data-navigate-once>
-        console.log('data loaded')
-    </script>
 </body>
 
 </html>
