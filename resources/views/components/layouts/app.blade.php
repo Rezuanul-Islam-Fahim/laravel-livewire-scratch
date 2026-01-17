@@ -20,7 +20,8 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="p-6 bg-gray-900 text-white">
+<body class="p-6 bg-gray-900 text-white" x-data
+    x-on:click="$dispatch('clear:search-results')">
     <livewire:article-search />
     {{ $slot }}
 </body>
