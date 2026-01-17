@@ -24,6 +24,9 @@
     x-on:click="$dispatch('clear:search-results')">
     <livewire:article-search />
     {{ $slot }}
+    <script data-navigate-once>
+        console.log('data loaded')
+    </script>
 </body>
 
 </html>
