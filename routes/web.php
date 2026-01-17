@@ -1,11 +1,8 @@
 <?php
 
+use App\Livewire\ArticleIndex;
 use App\Livewire\ArticlePage;
-use App\Livewire\ArticleSearch;
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/', function () {
-//     return view('home');
-// })->name('home');
-
+Route::get('/', ArticleIndex::class);
 Route::get('/articles/{article}', ArticlePage::class);
