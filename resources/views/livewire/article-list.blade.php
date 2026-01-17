@@ -1,5 +1,10 @@
 <div class="">
-    <table class="mx-auto border border-gray-300">
+    <a class="bg-blue-600 px-4 py-3 rounded-md hover:bg-blue-700"
+        href="/dashboard/articles/create">
+        Create New Article
+    </a>
+
+    <table class="mx-auto mt-6 border border-gray-300">
         <thead class="border-b border-gray-300">
             <th class="p-3">Title</th>
             <th class="p-3"></th>
