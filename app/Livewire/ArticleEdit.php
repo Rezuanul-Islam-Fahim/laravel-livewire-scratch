@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Livewire\Forms\ArticleForm;
 use App\Models\Article;
 use Livewire\Attributes\Title;
 use Livewire\Attributes\Validate;
@@ -9,27 +10,16 @@ use Livewire\Attributes\Validate;
 #[Title('Update article')]
 class ArticleEdit extends AdminComponent
 {
-    public ?Article $article;
-
-    #[Validate('required')]
-    public $title;
-
-    #[Validate('required')]
-    public $content;
+    public ArticleForm $form;
 
     public function mount(Article $article)
     {
-        $this->title = $article->title;
-        $this->content = $article->content;
-        $this->article = $article;
+        $this->form->setArticle($article);
     }
-
 
     public function update()
     {
-        $this->validate();
-
-        $this->article->update($this->only(['title', 'content']));
+        $this->form->update();
 
         $this->redirect('/dashboard/articles', navigate: true);
     }

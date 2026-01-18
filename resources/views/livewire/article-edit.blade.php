@@ -3,18 +3,18 @@
         <h3 class="text-2xl mb-3">Update article</h3>
         <div>
             <label class="text-gray-400">Title</label>
-            <input type="text" wire:model="title"
+            <input type="text" wire:model="form.title"
                 class="mt-0.5 w-full rounded-md border border-gray-500 bg-gray-700 p-2" />
-            @error('title')
+            @error('form.title')
                 <span class="text-red-500">{{ $message }}</span>
             @enderror
         </div>
         <div class="mt-3 mb-3">
             <label class="text-gray-400">Content</label>
-            <textarea wire:model="content"
+            <textarea wire:model="form.content"
                 class="mt-0.5 w-full rounded-md border border-gray-500 bg-gray-700 p-2"
                 rows="5"></textarea>
-            @error('content')
+            @error('form.content')
                 <span class="text-red-500">{{ $message }}</span>
             @enderror
         </div>

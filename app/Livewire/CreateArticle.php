@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Livewire\Forms\ArticleForm;
 use App\Models\Article;
 use Livewire\Attributes\Title;
 use Livewire\Attributes\Validate;
@@ -9,17 +10,11 @@ use Livewire\Attributes\Validate;
 #[Title('New Article')]
 class CreateArticle extends AdminComponent
 {
-    #[Validate('required')]
-    public $title;
-
-    #[Validate('required')]
-    public $content;
+    public ArticleForm $form;
 
     public function save()
     {
-        $validatedData = $this->validate();
-
-        Article::create($validatedData);
+        $this->form->store();
 
         $this->redirect('/dashboard/articles', navigate: true);
     }
