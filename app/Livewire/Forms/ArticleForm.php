@@ -25,7 +25,7 @@ class ArticleForm extends Form
         $this->title = $article->title;
         $this->content = $article->content;
         $this->published = $article->published;
-        $this->notifications = $article->notifications;
+        $this->notifications = $article->notifications ?? [];
         $this->article = $article;
 
         $this->allowNotifications = count($this->notifications) > 0;
