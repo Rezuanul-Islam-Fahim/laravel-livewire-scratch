@@ -61,7 +61,9 @@
             </div>
         </div>
         <button type="submit"
-            class="bg-blue-600 px-4 py-3 rounded-md hover:bg-blue-700 cursor-pointer">
+            class="bg-blue-600 px-4 py-3 rounded-md cursor-pointer disabled:bg-blue-300 disabled:cursor-default"
+            wire:dirty.class="hover:bg-blue-700"
+            wire:dirty.remove.attr="disabled" disabled>
             Create
         </button>
     </form>
