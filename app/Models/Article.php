@@ -10,5 +10,12 @@ class Article extends Model
     /** @use HasFactory<\Database\Factories\ArticleFactory> */
     use HasFactory;
 
-    public $fillable = ['title', 'content'];
+    public $fillable = ['title', 'content', 'published', 'notification'];
+
+    public function casts(): array
+    {
+        return [
+            'published' => 'boolean'
+        ];
+    }
 }
