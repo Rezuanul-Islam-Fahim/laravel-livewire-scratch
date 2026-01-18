@@ -17,23 +17,30 @@ class ArticleForm extends Form
     public $content;
 
     public $published = false;
-    public $notification = 'none';
+    public $allowNotifications = false;
+    public $notifications = [];
 
     public function setArticle(Article $article)
     {
         $this->title = $article->title;
         $this->content = $article->content;
         $this->published = $article->published;
-        $this->notification = $article->notification;
+        $this->notifications = $article->notifications;
         $this->article = $article;
+
+        $this->allowNotifications = count($this->notifications) > 0;
     }
 
     public function store()
     {
         $this->validate();
 
+        if (!$this->allowNotifications) {
+            $this->notifications = [];
+        }
+
         Article::create(
-            $this->only(['title', 'content', 'published', 'notification'])
+            $this->only(['title', 'content', 'published', 'notifications'])
         );
     }
 
@@ -41,8 +48,12 @@ class ArticleForm extends Form
     {
         $this->validate();
 
+        if (!$this->allowNotifications) {
+            $this->notifications = [];
+        }
+
         $this->article->update(
-            $this->only(['title', 'content', 'published', 'notification'])
+            $this->only(['title', 'content', 'published', 'notifications'])
         );
     }
 }
