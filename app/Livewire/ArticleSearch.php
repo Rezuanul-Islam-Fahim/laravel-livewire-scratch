@@ -4,34 +4,35 @@ namespace App\Livewire;
 
 use App\Models\Article;
 use Livewire\Attributes\On;
-use Livewire\Attributes\Reactive;
+use Livewire\Attributes\Url;
 use Livewire\Component;
 
 class ArticleSearch extends Component
 {
+    #[Url(as: 'q', except: '', history: true)]
     public $searchText = '';
-    public $results = [];
-
-    public function updatedSearchText($value)
-    {
-        $this->reset('results');
-
-        $this->validate([
-            'searchText' => 'required'
-        ]);
-
-        $searchTerm = "%$value%";
-        $this->results = Article::where('title', 'LIKE', $searchTerm)->get();
-    }
 
     #[On('clear:search-results')]
     public function clear()
     {
-        $this->reset('results', 'searchText');
+        $this->reset('searchText');
     }
+
+    // protected function queryString()
+    // {
+    //     return [
+    //         'searchText' => [
+    //             'as' => 'q',
+    //             'except' => '',
+    //             'history' => true
+    //         ]
+    //     ];
+    // }
 
     public function render()
     {
-        return view('livewire.article-search');
+        return view('livewire.article-search', [
+            'results' => Article::where('title', 'LIKE', "%{$this->searchText}%")->get()
+        ]);
     }
 }
