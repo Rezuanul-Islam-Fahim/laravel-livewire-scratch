@@ -4,7 +4,22 @@
             href="/dashboard/articles/create">
             Create New Article
         </a>
-        <livewire:published-count />
+        <div>
+            <button wire:click="showAll()"
+                class="bg-violet-600 px-4 py-3 rounded-md hover:bg-violet-700">
+                Show All
+            </button>
+            <button wire:click="showPublished()"
+                class="bg-violet-600 px-4 py-3 rounded-md hover:bg-violet-700">
+                Show Published (<livewire:published-count
+                    placeholder-text="loading..." />)
+            </button>
+        </div>
+    </div>
+
+    <div class="mt-4 mb-6">
+        {{ $articles->links(data: ['scrollTo' => false]) }}
+        {{-- {{ $articles->links(data: ['scrollTo' => 'table.w-full']) }} --}}
     </div>
 
     <table class="mt-6 w-full">
