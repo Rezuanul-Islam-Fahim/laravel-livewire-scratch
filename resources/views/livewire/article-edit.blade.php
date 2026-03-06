@@ -24,6 +24,27 @@
                 <span class="text-red-500">{{ $message }}</span>
             @enderror
         </div>
+        <div class="mt-3 mb-3">
+            <label wire:dirty.class="text-orange-500" wire:target="form.photo"
+                class="text-gray-400 block">
+                Photo<span wire:dirty wire:target="form.photo">*</span>
+            </label>
+            <div class="flex items-center">
+                <input wire:model="form.photo" type="file">
+                <div>
+                    @if ($form->photo)
+                        <img width="500px"
+                            src="{{ $form->photo->temporaryUrl() }}">
+                    @elseif($form->photo_path)
+                        <img width="500px"
+                            src="{{ Storage::url($form->photo_path) }}">
+                    @endif
+                </div>
+            </div>
+            @error('form.photo')
+                <span class="text-red-500 block">{{ $message }}</span>
+            @enderror
+        </div>
         <div class="flex my-3">
             <label wire:dirty.class="text-orange-500"
                 wire:target="form.published"
@@ -74,9 +95,7 @@
             </div>
         </div>
         <button type="submit"
-            class="bg-blue-600 px-4 py-3 rounded-md cursor-pointer disabled:bg-blue-300 disabled:cursor-default"
-            wire:dirty.class="hover:bg-blue-700"
-            wire:dirty.remove.attr="disabled" disabled>
+            class="bg-blue-600 px-4 py-3 rounded-md cursor-pointer disabled:bg-blue-300 disabled:cursor-default">
             Update
         </button>
     </form>

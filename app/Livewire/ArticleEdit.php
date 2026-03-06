@@ -5,11 +5,13 @@ namespace App\Livewire;
 use App\Livewire\Forms\ArticleForm;
 use App\Models\Article;
 use Livewire\Attributes\Title;
-use Livewire\Attributes\Validate;
+use Livewire\Features\SupportFileUploads\WithFileUploads;
 
 #[Title('Update article')]
 class ArticleEdit extends AdminComponent
 {
+    use WithFileUploads;
+
     public ArticleForm $form;
 
     public function mount(Article $article)

@@ -18,6 +18,24 @@
                 <span class="text-red-500">{{ $message }}</span>
             @enderror
         </div>
+        <div class="mt-3 mb-3">
+            <label wire:dirty.class="text-orange-500" wire:target="form.photo"
+                class="text-gray-400 block">
+                Photo<span wire:dirty wire:target="form.photo">*</span>
+            </label>
+            <div class="flex items-center">
+                <input wire:model="form.photo" type="file">
+                <div>
+                    @if ($form->photo)
+                        <img width="500px"
+                            src="{{ $form->photo->temporaryUrl() }}">
+                    @endif
+                </div>
+            </div>
+            @error('form.photo')
+                <span class="text-red-500 block">{{ $message }}</span>
+            @enderror
+        </div>
         <div class="flex my-3">
             <label class="flex items-center text-gray-400">
                 <input wire:model.boolean="form.published"
