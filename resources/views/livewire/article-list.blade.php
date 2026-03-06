@@ -30,6 +30,12 @@
         {{-- {{ $articles->links(data: ['scrollTo' => 'table.w-full']) }} --}}
     </div>
 
+    @if (session('status'))
+        <div class="bg-green-600 text-white p-3">
+            {{ session('status') }}
+        </div>
+    @endif
+
     <table class="mt-6 w-full">
         <thead class="bg-gray-700">
             <th class="p-3">Title</th>

@@ -21,7 +21,9 @@ class ArticleEdit extends AdminComponent
     {
         $this->form->update();
 
-        $this->redirect('/dashboard/articles', navigate: true);
+        session()->flash('status', 'Article editted successfully');
+
+        $this->redirect(ArticleList::class, navigate: true);
     }
 
     public function render()
