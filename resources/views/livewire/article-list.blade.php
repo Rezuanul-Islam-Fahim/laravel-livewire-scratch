@@ -5,12 +5,20 @@
             Create New Article
         </a>
         <div>
-            <button wire:click="showAll()"
-                class="bg-violet-600 px-4 py-3 rounded-md hover:bg-violet-700">
+            <button wire:click="togglePublished(false)"
+                @class([
+                    'px-4 py-3 rounded-md',
+                    'bg-blue-700' => !$showPublishedOnly,
+                    'bg-gray-600' => $showPublishedOnly,
+                ])>
                 Show All
             </button>
-            <button wire:click="showPublished()"
-                class="bg-violet-600 px-4 py-3 rounded-md hover:bg-violet-700">
+            <button wire:click="togglePublished(true)"
+                @class([
+                    'px-4 py-3 rounded-md',
+                    'bg-blue-700' => $showPublishedOnly,
+                    'bg-gray-600' => !$showPublishedOnly,
+                ])>
                 Show Published (<livewire:published-count
                     placeholder-text="loading..." />)
             </button>
