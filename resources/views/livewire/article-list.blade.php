@@ -18,7 +18,7 @@
     </div>
 
     <div class="mt-4 mb-6">
-        {{ $articles->links(data: ['scrollTo' => false]) }}
+        {{ $this->articles->links(data: ['scrollTo' => false]) }}
         {{-- {{ $articles->links(data: ['scrollTo' => 'table.w-full']) }} --}}
     </div>
 
@@ -28,7 +28,7 @@
             <th class="p-3"></th>
         </thead>
         <tbody class="bg-gray-800">
-            @foreach ($articles as $article)
+            @foreach ($this->articles as $article)
                 <tr class="border-b border-gray-700">
                     <td class="p-4" wire:key={{ $article->id }}>
                         {{ $article->title }}</td>
