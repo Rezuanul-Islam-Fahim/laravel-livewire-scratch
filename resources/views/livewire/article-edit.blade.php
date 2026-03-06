@@ -1,6 +1,6 @@
 <div class="w-full mx-auto md:w-xl">
     <form wire:submit.prevent="update()">
-        <h3 class="text-2xl mb-3">Update article</h3>
+        <h3 class="text-2xl mb-3">Update article (ID: {{ $form->id }})</h3>
         <div>
             <label wire:dirty.class="text-orange-500" wire:target="form.title"
                 class="text-gray-400">
