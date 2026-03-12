@@ -36,8 +36,14 @@
                         <img width="500px"
                             src="{{ $form->photo->temporaryUrl() }}">
                     @elseif($form->photo_path)
-                        <img width="500px"
-                            src="{{ Storage::url($form->photo_path) }}">
+                        <div class="text-center">
+                            <img width="500px"
+                                src="{{ Storage::url($form->photo_path) }}">
+                            <button type="button" wire:click="downloadPhoto"
+                                class="mt-3 bg-blue-700 text-white p-2 rounded-sm">
+                                Download
+                            </button>
+                        </div>
                     @endif
                 </div>
             </div>
