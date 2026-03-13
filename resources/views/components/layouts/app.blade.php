@@ -30,10 +30,12 @@
                         class="text-white hover:text-gray-300 transition-colors font-medium">
                         Home
                     </a>
-                    <a href="/dashboard"
-                        class="text-white hover:text-gray-300 transition-colors font-medium">
-                        Admin Dashboard
-                    </a>
+                    @auth
+                        <a href="/dashboard"
+                            class="text-white hover:text-gray-300 transition-colors font-medium">
+                            Admin Dashboard
+                        </a>
+                    @endauth
                 </div>
 
                 <!-- Right side - Search bar -->

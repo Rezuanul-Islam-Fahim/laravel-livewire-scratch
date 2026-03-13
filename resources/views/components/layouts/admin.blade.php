@@ -36,6 +36,10 @@
                         Articles
                     </a>
                 </div>
+                <a href="/logout"
+                    class="text-white hover:text-gray-300 transition-colors font-medium">
+                    Logout
+                </a>
             </div>
         </div>
     </nav>
