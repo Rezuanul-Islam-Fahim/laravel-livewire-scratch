@@ -1,5 +1,5 @@
 <div @click.away="$dispatch('clear:search-results')"
-    class="{{ $show ? 'block' : 'hidden' }} mt-3 absolute bg-gray-800 border border-gray-700 rounded-lg pl-3 pb-3 pr-3 pt-5 shadow-2xl">
+    class="mt-3 absolute bg-gray-800 border border-gray-700 rounded-lg pl-3 pb-3 pr-3 pt-5 shadow-2xl">
     <div class="absolute top-0 right-2 text-lg">
         <button wire:click="dispatch('clear:search-results')" type="submit"
             class="cursor-pointer">x</button>
